@@ -1,0 +1,124 @@
+-- component c-note:
+caption title:
+string list keywords:
+optional body notes:
+optional string summary:
+
+
+
+-- ftd.column:
+width: fill-container
+height: hug-content
+min-height.fixed.px: 300
+border-width.px: 2
+margin.px: 5
+background.solid: $inherited.colors.background.step-2
+
+
+
+
+-- ftd.column:
+width: fill-container
+height: hug-content 
+border-bottom-width.px: 2
+padding.px: 5
+
+-- ftd.text: Topic/Title:
+role: $inherited.types.copy-regular
+color: $inherited.colors.info.text
+style: bold
+
+-- ftd.text: $c-note.title
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+style: semi-bold
+
+-- end: ftd.column
+
+
+
+
+-- ftd.row:
+width: fill-container
+height.fixed.percent: 70
+
+
+-- ftd.column:
+width.fixed.percent: 25
+height: fill-container
+spacing.fixed.rem: 0.5
+padding.px: 5
+border-right-width.px: 2
+
+-- ftd.text: Keywords/Questions:
+role: $inherited.types.copy-regular
+color: $inherited.colors.info.text
+style: bold
+
+-- ftd.column:
+width: fill-container
+height: fill-container
+spacing.fixed.rem: 0.3
+overflow: auto
+
+-- ftd.text: $obj
+for: $obj in $c-note.keywords
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+style: semi-bold
+align-self: center
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+
+
+
+-- ftd.column:
+width.fixed.percent: 75
+height: fill-container
+padding.px: 5
+overflow: auto
+
+-- ftd.text: Notes:
+role: $inherited.types.copy-regular
+color: $inherited.colors.info.text
+style: bold
+
+-- ftd.text: $c-note.notes 
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+style: semi-bold
+
+-- end: ftd.column
+
+
+
+-- end: ftd.row
+
+
+
+
+-- ftd.column:
+width: fill-container
+height.fixed.percent: 30
+border-top-width.px: 2
+padding.px: 5
+
+-- ftd.text: Summary:
+role: $inherited.types.copy-regular
+color: $inherited.colors.info.text
+style: bold
+
+-- ftd.text: $c-note.summary
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+style: semi-bold
+
+-- end: ftd.column
+
+
+-- end: ftd.column
+
+-- end: c-note
